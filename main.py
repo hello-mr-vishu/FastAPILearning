@@ -1,6 +1,12 @@
-def main():
-    print("Hello from fastapi!")
+from fastapi import FastAPI
 
 
-if __name__ == "__main__":
-    main()
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "Hello World"}
+
+@app.get("/about")
+def about():
+    return {"message": "This is a simple FastAPI application."}
